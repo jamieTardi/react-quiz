@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+//variables
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+$background:  #3D85C6;
+
+//main screen styles
+
+html{
+    background: #FEBC2A;
+    font-family: 'Montserrat', sans-serif;
+}
+.title-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100vw;
+    font-family: 'Montserrat', sans-serif;
+    background: $background;
+}
+
+.title-container > h1 {
+    color: white;
+}
+
+.start-container{
+    @include flex-center();
+    width: 100vw;
+    height: 90vh;
+}
+
+.start-card{
+    width: 40vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    background: #eeeeee;
+    position: relative;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/main-background.jpg);
+    background-position: center;
+    background-size: cover;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+
+.start-card > h3 {
+    position: absolute;
+    top: 30%;
+    padding: 1rem 2rem;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.start-button{
+    height: 15%;
+    background: #3D85C6;
+    width: 100%;
+    text-align: center;
+    padding: 0.7rem 0.75rem;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.start-button > svg{
+    fill: white;
+}
+
+
