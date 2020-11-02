@@ -1,3 +1,5 @@
+@import './Genere';
+
 *{
     margin: 0;
     padding: 0;
@@ -46,7 +48,7 @@ html{
 }
 
 .start-card{
-    width: 40vw;
+    min-width: 30%;
     height: 30vh;
     display: flex;
     flex-direction: column;
@@ -87,4 +89,13 @@ html{
     fill: white;
 }
 
+.hide {
+    display: none;
+    pointer-events: none;
+}
+
+.show{
+    display: flex;
+    flex-direction: column;
+}
 
