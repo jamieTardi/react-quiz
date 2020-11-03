@@ -22,6 +22,8 @@
     height: 10vh;
     width: 100vw;
     color: white;
+    @include flex-center();
+    font-family: 'Henny Penny', cursive;
 }
 
 .cards-container{
@@ -59,8 +61,13 @@
     
 }
 
+.genere-para{
+    margin: 0rem 1rem;
+}
+
 h5:first-child {
     padding-left: 0.5rem;
+    cursor: pointer;
 }
 
 .click-me {

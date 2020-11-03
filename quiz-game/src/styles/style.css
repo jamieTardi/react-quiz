@@ -7,6 +7,16 @@
   height: 10vh;
   width: 100vw;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Henny Penny', cursive;
 }
 
 .cards-container {
@@ -65,8 +75,13 @@
   position: relative;
 }
 
+.genere-para {
+  margin: 0rem 1rem;
+}
+
 h5:first-child {
   padding-left: 0.5rem;
+  cursor: pointer;
 }
 
 .click-me {
@@ -99,7 +114,7 @@ html {
           align-items: center;
   height: 10vh;
   width: 100vw;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Henny Penny', cursive;
   background: #3D85C6;
 }
 
