@@ -24,7 +24,7 @@ function App() {
         </div>
       </div>
       </div>
-      <Genere hide={hide}/>
+      <Genere hide={hide} hideMain={hideMain}/>
     </div>
   );
 }
