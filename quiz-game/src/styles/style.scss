@@ -1,5 +1,5 @@
 @import './Genere';
-@import './Science';
+@import './Questions';
 
 *{
     margin: 0;
@@ -32,10 +32,12 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10vh;
+    height: 30vh;
     width: 100vw;
     font-family: 'Henny Penny', cursive;
-    background: $background;
+    background: url(../images/title-background.png);
+    background-position: center;
+    background-size: cover;
 }
 
 .title-container > h1 {
@@ -45,7 +47,7 @@ html{
 .start-container{
     @include flex-center();
     width: 100vw;
-    height: 90vh;
+    height: 60vh;
 }
 
 .start-card{

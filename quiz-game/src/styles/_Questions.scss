@@ -11,19 +11,32 @@
     flex-direction: column;
 }
 
-.science-title-container{
+.science-title-container,
+.maths-title-container{
 width: 100vw;
-height: 10vh;
-@include flex-center();
+height: 40vh;
+background: url(../images/title-background.png);
+display: flex;
+justify-content: center;
+padding-top: 3rem;
+position: relative;
+color: white;
+font-family: 'Henny Penny', cursive;
 }
 
-.science-card-container{
+.science-card-container,
+.maths-card-container{
+    position: absolute;
+    top: 30%;
     width: 100vw;
-    height: 90vh;
-    @include flex-center()
+    height: 60vh;
+    display: flex;
+justify-content: center;
+align-items: flex-start;
 }
 
-.science-card{
+.science-card,
+.maths-card{
     height: 50vh;
     width: 50vw;
     border: none;
@@ -31,7 +44,8 @@ height: 10vh;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
-.science-question{
+.science-question,
+.maths-question{
     width: 100%;
     height: 60%;
     background: #eeeeee;
@@ -41,7 +55,10 @@ height: 10vh;
 }
 
 .science-answer-half,
-.science-answer-second-half{
+.science-answer-second-half,
+.maths-answer-half,
+.maths-answer-second-half
+{
     width: 50%;
     height: 100%;
     @include flex-column();
@@ -53,7 +70,8 @@ height: 10vh;
 
 
 
-.science-answers{
+.science-answers,
+.maths-answers{
 width: 80%;
 height: 40%;
 @include flex-center();
@@ -62,6 +80,7 @@ font-size: large;
 color: black;
 background: white;
 box-shadow: 5px 5px 2.5px 0px rgba(0,0,0,0.75);
+cursor: pointer;
 }
 
 .answer-container{

@@ -26,17 +26,17 @@ export default function Science({ hide, genereHide, hideMain, randomNum }) {
     
      
     
-    async function scienceMultipleChoice (num) {
+    async function scienceMultipleChoice () {
         let fetchLink = 'https://opentdb.com/api.php?amount=15&category=18&difficulty=hard&type=multiple'
         const data = await fetchApi(
             fetchLink
         )
-        console.log(num)
        
       
         try{
         
          scienceMultipleFunc(data.results[5].question)
+         console.log(data.results[5].question)
          scienceWrongFunc(data.results[5].incorrect_answers)
          scienceCorrectFunc(data.results[5].correct_answer)
          
