@@ -12,7 +12,11 @@
 }
 
 .science-title-container,
-.maths-title-container{
+.maths-title-container,
+.general-title-container,
+.nature-title-container,
+.geography-title-container,
+.games-title-container{
 width: 100vw;
 height: 40vh;
 background: url(../images/title-background.png);
@@ -25,7 +29,11 @@ font-family: 'Henny Penny', cursive;
 }
 
 .science-card-container,
-.maths-card-container{
+.maths-card-container,
+.general-card-container,
+.nature-card-container,
+.geography-card-container,
+.games-card-container{
     position: absolute;
     top: 30%;
     width: 100vw;
@@ -36,7 +44,11 @@ align-items: flex-start;
 }
 
 .science-card,
-.maths-card{
+.maths-card,
+.general-card,
+.nature-card,
+.geography-card,
+.games-card{
     height: 50vh;
     width: 50vw;
     border: none;
@@ -45,7 +57,11 @@ align-items: flex-start;
 }
 
 .science-question,
-.maths-question{
+.maths-question,
+.general-question,
+.nature-question,
+.geography-question,
+.games-question{
     width: 100%;
     height: 60%;
     background: #eeeeee;
@@ -57,7 +73,15 @@ align-items: flex-start;
 .science-answer-half,
 .science-answer-second-half,
 .maths-answer-half,
-.maths-answer-second-half
+.maths-answer-second-half,
+.general-answer-half,
+.general-answer-second-half,
+.nature-answer-half,
+.nature-answer-second-half,
+.geography-answer-half,
+.geography-answer-second-half,
+.games-answer-half,
+.games-answer-second-half
 {
     width: 50%;
     height: 100%;
@@ -71,7 +95,11 @@ align-items: flex-start;
 
 
 .science-answers,
-.maths-answers{
+.maths-answers,
+.general-answers,
+.nature-answers,
+.geography-answers,
+.games-answers{
 width: 80%;
 height: 40%;
 @include flex-center();
