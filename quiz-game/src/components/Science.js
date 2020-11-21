@@ -5,6 +5,7 @@ export default function Science({ hide, genereHide, hideMain, randomNum }) {
     const [scienceMultiple, scienceMultipleFunc] = useState("")
     const [scienceWrong, scienceWrongFunc] = useState([])
     const [scienceCorrect, scienceCorrectFunc] = useState("")
+    const [scoreState, scoreStateFunc] = useState(0)
     
     async function fetchApi (url){
         const dataFetch = await fetch(url, {
@@ -17,12 +18,34 @@ export default function Science({ hide, genereHide, hideMain, randomNum }) {
         return data
     }
 
+    const updateScore = () => {
+        scoreStateFunc(score => score + 1)
+        if (scoreState === 5){
+            alert('Winner!')
+            scoreStateFunc(score => score - 6)
+        }
+    }
+
     let num = 0
     const checkAnswer = () => {
+        if(questionsScience.answers[3].correct === true){
+            console.log('correct')
+            updateScore()
+        }
+        else{
+            console.log('wrong')
+        }
         num += 1 
         scienceMultipleChoice(num)
         console.log(num)
      }
+
+    const wrongAnswer = () => {
+        if (questionsScience.answers[0].correct === false){
+            console.log('wrong')
+        }
+        scoreStateFunc(score => score - 1)
+    }
     
      
     
@@ -76,7 +99,10 @@ export default function Science({ hide, genereHide, hideMain, randomNum }) {
     return (
         <div className={`science-container ${genereHide ? "hide" : "show"}`}>
             <div className="science-title-container">
+                <div className="score-and-title">
             <h1>Science Questions</h1>
+    <p className="score">Score: <span className="score-span">{scoreState}</span></p>
+            </div>
             </div>
             <div className="science-card-container">
                 <div className="science-card">
@@ -85,12 +111,12 @@ export default function Science({ hide, genereHide, hideMain, randomNum }) {
                     </div>
                     <div className="answer-container">
                     <div className="science-answer-half">
-    <div className="science-answers"><p className="answer1" onClick={checkAnswer} dangerouslySetInnerHTML={{__html: `${questionsScience.answers[1].answer}`}}></p></div>
-                        <div className="science-answers"><p className="answer2" onClick={checkAnswer} dangerouslySetInnerHTML={{__html: `${questionsScience.answers[2].answer}`}}></p></div>
+    <div className="science-answers"><p className="answer1" onClick={wrongAnswer} dangerouslySetInnerHTML={{__html: `${questionsScience.answers[1].answer}`}}></p></div>
+                        <div className="science-answers"><p className="answer2" onClick={wrongAnswer} dangerouslySetInnerHTML={{__html: `${questionsScience.answers[2].answer}`}}></p></div>
                         
                     </div>
                     <div className="science-answer-second-half">
-                    <div className="science-answers"><p className="answer3" onClick={checkAnswer} dangerouslySetInnerHTML={{__html: `${questionsScience.answers[0].answer}`}}></p></div>
+                    <div className="science-answers"><p className="answer3" onClick={wrongAnswer} dangerouslySetInnerHTML={{__html: `${questionsScience.answers[0].answer}`}}></p></div>
                     <div className="science-answers"><p className="answer4" onClick={checkAnswer} dangerouslySetInnerHTML={{__html: `${questionsScience.answers[3].answer}`}}></p></div>
                     </div>
                     </div>

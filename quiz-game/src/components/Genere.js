@@ -7,7 +7,7 @@ import Science from './Science';
 import Games from './Games'
 
 
-function Genere({ hide, hideMain }) {
+function Genere({ hide, hideMain, updateScore }) {
     const randomNum = Math.floor(Math.random() * 16)  
     const [questions, questionsFunc] = useState("");
     const [mathsQuestions, mathsQuestionsFunc] = useState("");
@@ -180,13 +180,13 @@ useEffect(() => {
         </div>
         </div>
         
-        <Science genereHide={genereHide} hideMain={hideMain} fetchApi={fetchApi} quizData ={gamesQuizData} randomNum ={randomNum}/>
+        <Science genereHide={genereHide} hideMain={hideMain} fetchApi={fetchApi} quizData ={gamesQuizData} randomNum ={randomNum} updateScore={updateScore}/>
         
-        <Mathematics mathsHide={mathsHide}/>
-        <GeneralKnowledge generalHide={generalHide}/>
-        <Nature natureHide={natureHide} />
-        <Geography geographyHide={geographyHide} />
-        <Games gamesHide={gamesHide} />
+        <Mathematics mathsHide={mathsHide} updateScore={updateScore}/>
+        <GeneralKnowledge generalHide={generalHide} updateScore={updateScore}/>
+        <Nature natureHide={natureHide} updateScore={updateScore}/>
+        <Geography geographyHide={geographyHide} updateScore={updateScore}/>
+        <Games gamesHide={gamesHide} updateScore={updateScore}/>
         </div>
         
     )

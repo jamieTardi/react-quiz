@@ -93,6 +93,11 @@ h5:first-child {
   padding-left: 1rem;
 }
 
+.score-and-title {
+  position: absolute;
+  top: 20%;
+}
+
 .science-title-container,
 .maths-title-container,
 .general-title-container,
@@ -108,10 +113,17 @@ h5:first-child {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding-top: 3rem;
-  position: relative;
   color: white;
   font-family: 'Henny Penny', cursive;
+  position: relative;
 }
 
 .science-card-container,
@@ -283,6 +295,7 @@ html {
           align-items: center;
   width: 100vw;
   height: 60vh;
+  position: relative;
 }
 
 .start-card {
@@ -353,5 +366,24 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media only screen and (min-width: 900px) {
+  .start-card {
+    max-width: 20%;
+  }
+  .title-container {
+    height: 40vh;
+  }
+  .start-container {
+    position: absolute;
+    top: 30%;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .start-card > h3 {
+    font-size: 14px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

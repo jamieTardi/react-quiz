@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 
-export default function Nature({natureHide}) {
+export default function Nature({natureHide, updateScore}) {
     const [natureMultiple, natureMultipleFunc] = useState("")
     const [natureWrong, natureWrongFunc] = useState("")
     const [natureCorrect, natureCorrectFunc] = useState("")
+    const [scoreState, scoreStateFunc] = useState(0)
 
     async function fetchApi (url){
         const dataFetch = await fetch(url, {
@@ -17,12 +18,24 @@ export default function Nature({natureHide}) {
     }
     const natureRandomNum = Math.floor(Math.random() * 12)
     const checkAnswer = () => {
-        
-        
-        natureMultipleChoice(natureRandomNum + 1)
-        
-        
+        if(questionsNature.answers[3].correct === true){
+            console.log('correct')
+            scoreStateFunc(score => score + 1)
+            updateScore()
+        }
+        else{
+            console.log('wrong')
+        }
+       natureMultipleChoice(natureRandomNum + 1)
      }
+
+    const wrongAnswer = () => {
+        if (questionsNature.answers[0].correct === false){
+            console.log('wrong')
+        }
+        scoreStateFunc(score => score - 1)
+        natureMultipleChoice(natureRandomNum + 1)
+    }
     
 
 
@@ -72,7 +85,10 @@ export default function Nature({natureHide}) {
     return (
         <div className={`nature-container ${natureHide ? "hide" : "show"}`}>
         <div className="nature-title-container">
+        <div className="score-and-title">
         <h1>Nature Questions</h1>
+        <p className="score">Score: <span className="score-span">{scoreState}</span></p>
+        </div>
         </div>
         <div className="nature-card-container">
             <div className="nature-card">
@@ -81,14 +97,14 @@ export default function Nature({natureHide}) {
                 </div>
                 <div className="answer-container">
                 <div className="nature-answer-half">
-<div className="nature-answers" onClick={checkAnswer}><p className="answer1" dangerouslySetInnerHTML={{__html: `${questionsNature.answers[3].answer}`}} ></p>
+<div className="nature-answers" onClick={wrongAnswer}><p className="answer1" dangerouslySetInnerHTML={{__html: `${questionsNature.answers[2].answer}`}} ></p>
 </div>
-                    <div className="nature-answers" onClick={checkAnswer}><p className="answer2" dangerouslySetInnerHTML={{__html: `${questionsNature.answers[2].answer}`}} ></p></div>
+                    <div className="nature-answers" onClick={checkAnswer}><p className="answer2" dangerouslySetInnerHTML={{__html: `${questionsNature.answers[3].answer}`}} ></p></div>
                     
                 </div>
                 <div className="nature-answer-second-half">
-                <div className="nature-answers" onClick={checkAnswer}><p className="answer3" dangerouslySetInnerHTML={{__html: `${questionsNature.answers[0].answer}`}}></p></div>
-                <div className="nature-answers" onClick={checkAnswer}><p className="answer4" dangerouslySetInnerHTML={{__html: `${questionsNature.answers[1].answer}`}}></p></div>
+                <div className="nature-answers" onClick={wrongAnswer}><p className="answer3" dangerouslySetInnerHTML={{__html: `${questionsNature.answers[0].answer}`}}></p></div>
+                <div className="nature-answers" onClick={wrongAnswer}><p className="answer4" dangerouslySetInnerHTML={{__html: `${questionsNature.answers[1].answer}`}}></p></div>
                 </div>
                 </div>
             </div>

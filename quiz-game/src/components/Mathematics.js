@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 
-export default function Mathematics({ mathsHide }) {
+export default function Mathematics({ mathsHide, updateScore }) {
     const [mathsMultiple, mathsMultipleFunc] = useState("")
     const [mathsWrong, mathsWrongFunc] = useState("")
     const [mathsCorrect, mathsCorrectFunc] = useState("")
+    const [scoreState, scoreStateFunc] = useState(0)
 
     async function fetchApi (url){
         const dataFetch = await fetch(url, {
@@ -16,13 +17,7 @@ export default function Mathematics({ mathsHide }) {
         return data
     }
     const mathsRandomNum = Math.floor(Math.random() * 12)
-    const checkAnswer = () => {
-        
-        
-        mathsMultipleChoice(mathsRandomNum + 1)
-        
-        
-     }
+   
     
 
 
@@ -46,6 +41,25 @@ export default function Mathematics({ mathsHide }) {
          console.log('error')
         }
         
+    }
+    const checkAnswer = () => {
+        if(questionsMaths.answers[3].correct === true){
+            console.log('correct')
+            scoreStateFunc(score => score + 1)
+            updateScore()
+        }
+        else{
+            console.log('wrong')
+        }
+        mathsMultipleChoice(mathsRandomNum + 1)
+     }
+
+    const wrongAnswer = () => {
+        if (questionsMaths.answers[0].correct === false){
+            console.log('wrong')
+        }
+        scoreStateFunc(score => score - 1)
+        mathsMultipleChoice(mathsRandomNum + 1)
     }
     
 
@@ -74,7 +88,10 @@ export default function Mathematics({ mathsHide }) {
     return (
         <div className={`maths-container ${mathsHide ? "hide" : "show"}`}>
             <div className="maths-title-container">
+            <div className="score-and-title">
             <h1>Maths Questions</h1>
+            <p className="score">Score: <span className="score-span">{scoreState}</span></p>
+            </div>
             </div>
             <div className="maths-card-container">
                 <div className="maths-card">
@@ -83,14 +100,14 @@ export default function Mathematics({ mathsHide }) {
                     </div>
                     <div className="answer-container">
                     <div className="maths-answer-half">
-    <div className="maths-answers" onClick={checkAnswer}><p className="answer1" dangerouslySetInnerHTML={{__html: `${questionsMaths.answers[0].answer}`}} ></p>
+    <div className="maths-answers" onClick={wrongAnswer}><p className="answer1" dangerouslySetInnerHTML={{__html: `${questionsMaths.answers[0].answer}`}} ></p>
     </div>
-                        <div className="maths-answers" onClick={checkAnswer}><p className="answer2" dangerouslySetInnerHTML={{__html: `${questionsMaths.answers[2].answer}`}} ></p></div>
+                        <div className="maths-answers" onClick={wrongAnswer}><p className="answer2" dangerouslySetInnerHTML={{__html: `${questionsMaths.answers[2].answer}`}} ></p></div>
                         
                     </div>
                     <div className="maths-answer-second-half">
-                    <div className="maths-answers" onClick={checkAnswer}><p className="answer3" dangerouslySetInnerHTML={{__html: `${questionsMaths.answers[3].answer}`}}></p></div>
-                    <div className="maths-answers" onClick={checkAnswer}><p className="answer4" dangerouslySetInnerHTML={{__html: `${questionsMaths.answers[1].answer}`}}></p></div>
+                    <div className="maths-answers" onClick={wrongAnswer}><p className="answer3" dangerouslySetInnerHTML={{__html: `${questionsMaths.answers[1].answer}`}}></p></div>
+                    <div className="maths-answers" onClick={checkAnswer}><p className="answer4" dangerouslySetInnerHTML={{__html: `${questionsMaths.answers[3].answer}`}}></p></div>
                     </div>
                     </div>
                 </div>

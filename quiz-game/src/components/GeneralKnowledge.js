@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 
-export default function GeneralKnowledge({generalHide}) {
+export default function GeneralKnowledge({generalHide, updateScore}) {
     const [generalMultiple, generalMultipleFunc] = useState("")
     const [generalWrong, generalWrongFunc] = useState("")
     const [generalCorrect, generalCorrectFunc] = useState("")
+    const [scoreState, scoreStateFunc] = useState(0)
 
     async function fetchApi (url){
         const dataFetch = await fetch(url, {
@@ -16,13 +17,26 @@ export default function GeneralKnowledge({generalHide}) {
         return data
     }
     const generalRandomNum = Math.floor(Math.random() * 12)
-    const checkAnswer = () => {
-        
-        
+  
+     const checkAnswer = () => {
+        if(questionsGeneral.answers[3].correct === true){
+            console.log('correct')
+            scoreStateFunc(score => score + 1)
+            updateScore()
+        }
+        else{
+            console.log('wrong')
+        }
         generalMultipleChoice(generalRandomNum + 1)
-        
-        
      }
+
+    const wrongAnswer = () => {
+        if (questionsGeneral.answers[0].correct === false){
+            console.log('wrong')
+        }
+        scoreStateFunc(score => score - 1)
+        generalMultipleChoice(generalRandomNum + 1)
+    }
     
 
 
@@ -72,7 +86,10 @@ export default function GeneralKnowledge({generalHide}) {
     return (
         <div className={`general-container ${generalHide ? "hide" : "show"}`}>
         <div className="general-title-container">
+        <div className="score-and-title">
         <h1>General Knowledge Questions</h1>
+        <p className="score">Score: <span className="score-span">{scoreState}</span></p>
+        </div>
         </div>
         <div className="general-card-container">
             <div className="general-card">
@@ -83,12 +100,12 @@ export default function GeneralKnowledge({generalHide}) {
                 <div className="general-answer-half">
 <div className="general-answers" onClick={checkAnswer}><p className="answer1" dangerouslySetInnerHTML={{__html: `${questionsGeneral.answers[3].answer}`}} ></p>
 </div>
-                    <div className="general-answers" onClick={checkAnswer}><p className="answer2" dangerouslySetInnerHTML={{__html: `${questionsGeneral.answers[2].answer}`}} ></p></div>
+                    <div className="general-answers" onClick={wrongAnswer}><p className="answer2" dangerouslySetInnerHTML={{__html: `${questionsGeneral.answers[2].answer}`}} ></p></div>
                     
                 </div>
                 <div className="general-answer-second-half">
-                <div className="general-answers" onClick={checkAnswer}><p className="answer3" dangerouslySetInnerHTML={{__html: `${questionsGeneral.answers[0].answer}`}}></p></div>
-                <div className="general-answers" onClick={checkAnswer}><p className="answer4" dangerouslySetInnerHTML={{__html: `${questionsGeneral.answers[1].answer}`}}></p></div>
+                <div className="general-answers" onClick={wrongAnswer}><p className="answer3" dangerouslySetInnerHTML={{__html: `${questionsGeneral.answers[0].answer}`}}></p></div>
+                <div className="general-answers" onClick={wrongAnswer}><p className="answer4" dangerouslySetInnerHTML={{__html: `${questionsGeneral.answers[1].answer}`}}></p></div>
                 </div>
                 </div>
             </div>

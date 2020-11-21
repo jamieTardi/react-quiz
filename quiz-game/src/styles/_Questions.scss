@@ -11,6 +11,11 @@
     flex-direction: column;
 }
 
+.score-and-title{
+position: absolute;
+top: 20%
+}
+
 .science-title-container,
 .maths-title-container,
 .general-title-container,
@@ -20,12 +25,12 @@
 width: 100vw;
 height: 40vh;
 background: url(../images/title-background.png);
-display: flex;
-justify-content: center;
+@include flex-column();
 padding-top: 3rem;
-position: relative;
 color: white;
 font-family: 'Henny Penny', cursive;
+position: relative;
+
 }
 
 .science-card-container,

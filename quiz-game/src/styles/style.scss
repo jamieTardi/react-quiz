@@ -48,6 +48,7 @@ html{
     @include flex-center();
     width: 100vw;
     height: 60vh;
+    position: relative;
 }
 
 .start-card{
@@ -102,3 +103,22 @@ html{
     flex-direction: column;
 }
 
+@media only screen and (min-width: 900px){
+
+    .start-card{
+        max-width: 20%
+    }
+    .title-container{
+        height: 40vh;
+    }
+    .start-container{
+        position: absolute;
+        top: 30%
+    }
+}
+
+@media only screen and (max-width: 530px){
+    .start-card > h3 {
+        font-size: 14px;
+    }
+}
