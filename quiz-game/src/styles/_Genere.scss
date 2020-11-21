@@ -79,3 +79,9 @@ h5:first-child {
     padding-left: 1rem;
 }
 
+@media only screen and (max-width: 530px){
+    .cards-container{
+        padding-bottom: 3rem;
+        height: 250vh
+    }
+}

@@ -93,6 +93,13 @@ h5:first-child {
   padding-left: 1rem;
 }
 
+@media only screen and (max-width: 530px) {
+  .cards-container {
+    padding-bottom: 3rem;
+    height: 250vh;
+  }
+}
+
 .score-and-title {
   position: absolute;
   top: 20%;
@@ -180,7 +187,7 @@ h5:first-child {
       -ms-flex-align: center;
           align-items: center;
   padding: 0rem 2rem;
-  font-size: xx-large;
+  font-size: 1.5rem;
 }
 
 .science-answer-half,
@@ -247,6 +254,33 @@ h5:first-child {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media only screen and (max-width: 530px) {
+  .science-question,
+  .maths-question,
+  .general-question,
+  .nature-question,
+  .geography-question,
+  .games-question {
+    font-size: 1rem;
+  }
+  .science-answers,
+  .maths-answers,
+  .general-answers,
+  .nature-answers,
+  .geography-answers,
+  .games-answers {
+    font-size: 0.8rem;
+  }
+  .science-card,
+  .maths-card,
+  .general-card,
+  .nature-card,
+  .geography-card,
+  .games-card {
+    width: 75vw;
+  }
 }
 
 * {
@@ -384,6 +418,9 @@ html {
 @media only screen and (max-width: 530px) {
   .start-card > h3 {
     font-size: 14px;
+  }
+  .title-container > h1 {
+    font-size: 18px;
   }
 }
 /*# sourceMappingURL=style.css.map */
