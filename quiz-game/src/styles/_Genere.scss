@@ -81,7 +81,14 @@ h5:first-child {
 
 @media only screen and (max-width: 530px){
     .cards-container{
-        padding-bottom: 3rem;
-        height: 250vh
+        height: auto
+    }
+
+    .genere-card{
+        margin-bottom: 6rem;
+    }
+
+    .genere-card:first-child{
+        margin-top: 3rem;
     }
 }

@@ -120,9 +120,19 @@ html{
 @media only screen and (max-width: 530px){
     .start-card > h3 {
         font-size: 14px;
+        top: 20%;
+    }
+
+    .start-card{
+        width: 75vw;
+        height: 35vh;
     }
 
     .title-container > h1 {
         font-size: 18px;
+    }
+
+    .start-button{
+        height: 20%;
     }
 }

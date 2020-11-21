@@ -99,13 +99,13 @@ export default function Geography({geographyHide, updateScore}) {
                 </div>
                 <div className="answer-container">
                 <div className="geography-answer-half">
-<div className="geography-answers" onClick={wrongAnswer}><p className="answer1" dangerouslySetInnerHTML={{__html: `${questionsGeography.answers[0].answer}`}} ></p>
+<div className="geography-answers answers1" onClick={wrongAnswer}><p className="answer1" dangerouslySetInnerHTML={{__html: `${questionsGeography.answers[0].answer}`}} ></p>
 </div>
                     <div className="geography-answers" onClick={wrongAnswer}><p className="answer2" dangerouslySetInnerHTML={{__html: `${questionsGeography.answers[2].answer}`}} ></p></div>
                     
                 </div>
                 <div className="geography-answer-second-half">
-                <div className="geography-answers" onClick={checkAnswer}><p className="answer3" dangerouslySetInnerHTML={{__html: `${questionsGeography.answers[3].answer}`}}></p></div>
+                <div className="geography-answers answers1" onClick={checkAnswer}><p className="answer3" dangerouslySetInnerHTML={{__html: `${questionsGeography.answers[3].answer}`}}></p></div>
                 <div className="geography-answers" onClick={wrongAnswer}><p className="answer4" dangerouslySetInnerHTML={{__html: `${questionsGeography.answers[1].answer}`}}></p></div>
                 </div>
                 </div>

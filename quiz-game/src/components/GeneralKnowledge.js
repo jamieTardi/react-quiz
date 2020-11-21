@@ -98,13 +98,13 @@ export default function GeneralKnowledge({generalHide, updateScore}) {
                 </div>
                 <div className="answer-container">
                 <div className="general-answer-half">
-<div className="general-answers" onClick={checkAnswer}><p className="answer1" dangerouslySetInnerHTML={{__html: `${questionsGeneral.answers[3].answer}`}} ></p>
+<div className="general-answers answers1" onClick={checkAnswer}><p className="answer1" dangerouslySetInnerHTML={{__html: `${questionsGeneral.answers[3].answer}`}} ></p>
 </div>
                     <div className="general-answers" onClick={wrongAnswer}><p className="answer2" dangerouslySetInnerHTML={{__html: `${questionsGeneral.answers[2].answer}`}} ></p></div>
                     
                 </div>
                 <div className="general-answer-second-half">
-                <div className="general-answers" onClick={wrongAnswer}><p className="answer3" dangerouslySetInnerHTML={{__html: `${questionsGeneral.answers[0].answer}`}}></p></div>
+                <div className="general-answers answers1" onClick={wrongAnswer}><p className="answer3" dangerouslySetInnerHTML={{__html: `${questionsGeneral.answers[0].answer}`}}></p></div>
                 <div className="general-answers" onClick={wrongAnswer}><p className="answer4" dangerouslySetInnerHTML={{__html: `${questionsGeneral.answers[1].answer}`}}></p></div>
                 </div>
                 </div>

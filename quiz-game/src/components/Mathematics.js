@@ -100,13 +100,13 @@ export default function Mathematics({ mathsHide, updateScore }) {
                     </div>
                     <div className="answer-container">
                     <div className="maths-answer-half">
-    <div className="maths-answers" onClick={wrongAnswer}><p className="answer1" dangerouslySetInnerHTML={{__html: `${questionsMaths.answers[0].answer}`}} ></p>
+    <div className="maths-answers answers1" onClick={wrongAnswer}><p className="answer1" dangerouslySetInnerHTML={{__html: `${questionsMaths.answers[0].answer}`}} ></p>
     </div>
                         <div className="maths-answers" onClick={wrongAnswer}><p className="answer2" dangerouslySetInnerHTML={{__html: `${questionsMaths.answers[2].answer}`}} ></p></div>
                         
                     </div>
                     <div className="maths-answer-second-half">
-                    <div className="maths-answers" onClick={wrongAnswer}><p className="answer3" dangerouslySetInnerHTML={{__html: `${questionsMaths.answers[1].answer}`}}></p></div>
+                    <div className="maths-answers answers1" onClick={wrongAnswer}><p className="answer3" dangerouslySetInnerHTML={{__html: `${questionsMaths.answers[1].answer}`}}></p></div>
                     <div className="maths-answers" onClick={checkAnswer}><p className="answer4" dangerouslySetInnerHTML={{__html: `${questionsMaths.answers[3].answer}`}}></p></div>
                     </div>
                     </div>

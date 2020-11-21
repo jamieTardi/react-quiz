@@ -97,13 +97,13 @@ export default function Games({ gamesHide, updateScore }) {
                 </div>
                 <div className="answer-container">
                 <div className="games-answer-half">
-<div className="games-answers" onClick={wrongAnswer}><p className="answer1" dangerouslySetInnerHTML={{__html: `${questionsGames.answers[2].answer}`}} ></p>
+<div className="games-answers answers1" onClick={wrongAnswer}><p className="answer1" dangerouslySetInnerHTML={{__html: `${questionsGames.answers[2].answer}`}} ></p>
 </div>
                     <div className="games-answers" onClick={checkAnswer}><p className="answer2" dangerouslySetInnerHTML={{__html: `${questionsGames.answers[3].answer}`}} ></p></div>
                     
                 </div>
                 <div className="games-answer-second-half">
-                <div className="games-answers" onClick={wrongAnswer}><p className="answer3" dangerouslySetInnerHTML={{__html: `${questionsGames.answers[0].answer}`}}></p></div>
+                <div className="games-answers answers1" onClick={wrongAnswer}><p className="answer3" dangerouslySetInnerHTML={{__html: `${questionsGames.answers[0].answer}`}}></p></div>
                 <div className="games-answers" onClick={wrongAnswer}><p className="answer4" dangerouslySetInnerHTML={{__html: `${questionsGames.answers[1].answer}`}}></p></div>
                 </div>
                 </div>

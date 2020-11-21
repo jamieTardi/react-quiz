@@ -131,6 +131,7 @@ cursor: pointer;
 .geography-question,
 .games-question{
 font-size: 1rem;
+height: 50%;
 }
 .science-answers,
 .maths-answers,
@@ -139,6 +140,7 @@ font-size: 1rem;
 .geography-answers,
 .games-answers{
     font-size: 0.8rem;
+    height: 30%;
 }
 
 .science-card,
@@ -148,5 +150,30 @@ font-size: 1rem;
 .geography-card,
 .games-card{
     width: 75vw;
+    height: 65vh;
 }
+
+.science-answer-half,
+.science-answer-second-half,
+.maths-answer-half,
+.maths-answer-second-half,
+.general-answer-half,
+.general-answer-second-half,
+.nature-answer-half,
+.nature-answer-second-half,
+.geography-answer-half,
+.geography-answer-second-half,
+.games-answer-half,
+.games-answer-second-half{
+    
+}
+
+.answer-container{
+    height: 50%;
+}
+
+.answers1{
+    margin-bottom: 2rem;
+}
+
 }

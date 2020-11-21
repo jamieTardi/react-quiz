@@ -97,13 +97,13 @@ export default function Nature({natureHide, updateScore}) {
                 </div>
                 <div className="answer-container">
                 <div className="nature-answer-half">
-<div className="nature-answers" onClick={wrongAnswer}><p className="answer1" dangerouslySetInnerHTML={{__html: `${questionsNature.answers[2].answer}`}} ></p>
+<div className="nature-answers answers1" onClick={wrongAnswer}><p className="answer1" dangerouslySetInnerHTML={{__html: `${questionsNature.answers[2].answer}`}} ></p>
 </div>
                     <div className="nature-answers" onClick={checkAnswer}><p className="answer2" dangerouslySetInnerHTML={{__html: `${questionsNature.answers[3].answer}`}} ></p></div>
                     
                 </div>
                 <div className="nature-answer-second-half">
-                <div className="nature-answers" onClick={wrongAnswer}><p className="answer3" dangerouslySetInnerHTML={{__html: `${questionsNature.answers[0].answer}`}}></p></div>
+                <div className="nature-answers answers1" onClick={wrongAnswer}><p className="answer3" dangerouslySetInnerHTML={{__html: `${questionsNature.answers[0].answer}`}}></p></div>
                 <div className="nature-answers" onClick={wrongAnswer}><p className="answer4" dangerouslySetInnerHTML={{__html: `${questionsNature.answers[1].answer}`}}></p></div>
                 </div>
                 </div>

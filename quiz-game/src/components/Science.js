@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react'
 
-export default function Science({ hide, genereHide, hideMain, randomNum }) {
+export default function Science({ hide, genereHide, hideMain, randomNum, updateScore }) {
 
     const [scienceMultiple, scienceMultipleFunc] = useState("")
     const [scienceWrong, scienceWrongFunc] = useState([])
@@ -18,14 +18,7 @@ export default function Science({ hide, genereHide, hideMain, randomNum }) {
         return data
     }
 
-    const updateScore = () => {
-        scoreStateFunc(score => score + 1)
-        if (scoreState === 5){
-            alert('Winner!')
-            scoreStateFunc(score => score - 6)
-        }
-    }
-
+    
     let num = 0
     const checkAnswer = () => {
         if(questionsScience.answers[3].correct === true){
@@ -45,6 +38,7 @@ export default function Science({ hide, genereHide, hideMain, randomNum }) {
             console.log('wrong')
         }
         scoreStateFunc(score => score - 1)
+        scienceMultipleChoice(num)
     }
     
      
@@ -111,13 +105,13 @@ export default function Science({ hide, genereHide, hideMain, randomNum }) {
                     </div>
                     <div className="answer-container">
                     <div className="science-answer-half">
-    <div className="science-answers"><p className="answer1" onClick={wrongAnswer} dangerouslySetInnerHTML={{__html: `${questionsScience.answers[1].answer}`}}></p></div>
-                        <div className="science-answers"><p className="answer2" onClick={wrongAnswer} dangerouslySetInnerHTML={{__html: `${questionsScience.answers[2].answer}`}}></p></div>
+    <div className="science-answers answers1"><p className="answer1" onClick={wrongAnswer} dangerouslySetInnerHTML={{__html: `${questionsScience.answers[1].answer}`}}></p></div>
+                        <div className="science-answers answers2"><p className="answer2" onClick={wrongAnswer} dangerouslySetInnerHTML={{__html: `${questionsScience.answers[2].answer}`}}></p></div>
                         
                     </div>
                     <div className="science-answer-second-half">
-                    <div className="science-answers"><p className="answer3" onClick={wrongAnswer} dangerouslySetInnerHTML={{__html: `${questionsScience.answers[0].answer}`}}></p></div>
-                    <div className="science-answers"><p className="answer4" onClick={checkAnswer} dangerouslySetInnerHTML={{__html: `${questionsScience.answers[3].answer}`}}></p></div>
+                    <div className="science-answers answers1"><p className="answer3" onClick={wrongAnswer} dangerouslySetInnerHTML={{__html: `${questionsScience.answers[0].answer}`}}></p></div>
+                    <div className="science-answers answers2"><p className="answer4" onClick={checkAnswer} dangerouslySetInnerHTML={{__html: `${questionsScience.answers[3].answer}`}}></p></div>
                     </div>
                     </div>
                 </div>

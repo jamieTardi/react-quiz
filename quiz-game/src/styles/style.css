@@ -95,8 +95,13 @@ h5:first-child {
 
 @media only screen and (max-width: 530px) {
   .cards-container {
-    padding-bottom: 3rem;
-    height: 250vh;
+    height: auto;
+  }
+  .genere-card {
+    margin-bottom: 6rem;
+  }
+  .genere-card:first-child {
+    margin-top: 3rem;
   }
 }
 
@@ -264,6 +269,7 @@ h5:first-child {
   .geography-question,
   .games-question {
     font-size: 1rem;
+    height: 50%;
   }
   .science-answers,
   .maths-answers,
@@ -272,6 +278,7 @@ h5:first-child {
   .geography-answers,
   .games-answers {
     font-size: 0.8rem;
+    height: 30%;
   }
   .science-card,
   .maths-card,
@@ -280,6 +287,13 @@ h5:first-child {
   .geography-card,
   .games-card {
     width: 75vw;
+    height: 65vh;
+  }
+  .answer-container {
+    height: 50%;
+  }
+  .answers1 {
+    margin-bottom: 2rem;
   }
 }
 
@@ -418,9 +432,17 @@ html {
 @media only screen and (max-width: 530px) {
   .start-card > h3 {
     font-size: 14px;
+    top: 20%;
+  }
+  .start-card {
+    width: 75vw;
+    height: 35vh;
   }
   .title-container > h1 {
     font-size: 18px;
+  }
+  .start-button {
+    height: 20%;
   }
 }
 /*# sourceMappingURL=style.css.map */
