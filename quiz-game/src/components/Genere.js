@@ -22,6 +22,7 @@ function Genere({ hide, hideMain, updateScore }) {
     const [natureHide, natureHideFunc] = useState(true)
     const [geographyHide, geographyHideFunc] = useState(true)
     const [gamesHide, gamesHideFunc] = useState(true)
+    
 
     const hideGenere = () => {
         genereHideFunc(prev => !prev)

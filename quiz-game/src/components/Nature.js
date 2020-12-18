@@ -21,7 +21,7 @@ export default function Nature({natureHide, updateScore}) {
         if(questionsNature.answers[3].correct === true){
             console.log('correct')
             scoreStateFunc(score => score + 1)
-            updateScore()
+           
         }
         else{
             console.log('wrong')

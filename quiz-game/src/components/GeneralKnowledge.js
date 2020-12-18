@@ -22,7 +22,8 @@ export default function GeneralKnowledge({generalHide, updateScore}) {
         if(questionsGeneral.answers[3].correct === true){
             console.log('correct')
             scoreStateFunc(score => score + 1)
-            updateScore()
+            
+            
         }
         else{
             console.log('wrong')

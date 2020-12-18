@@ -46,7 +46,7 @@ export default function Mathematics({ mathsHide, updateScore }) {
         if(questionsMaths.answers[3].correct === true){
             console.log('correct')
             scoreStateFunc(score => score + 1)
-            updateScore()
+            
         }
         else{
             console.log('wrong')

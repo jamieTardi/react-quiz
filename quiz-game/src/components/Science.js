@@ -23,7 +23,7 @@ export default function Science({ hide, genereHide, hideMain, randomNum, updateS
     const checkAnswer = () => {
         if(questionsScience.answers[3].correct === true){
             console.log('correct')
-            updateScore()
+           
         }
         else{
             console.log('wrong')

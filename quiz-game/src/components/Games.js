@@ -22,7 +22,6 @@ export default function Games({ gamesHide, updateScore }) {
         if(questionsGames.answers[3].correct === true){
             console.log('correct')
             scoreStateFunc(score => score + 1)
-            updateScore()
         }
         else{
             console.log('wrong')
